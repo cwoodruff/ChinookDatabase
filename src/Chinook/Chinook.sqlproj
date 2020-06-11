@@ -13,7 +13,7 @@
     </RootPath>
     <RootNamespace>Chinook</RootNamespace>
     <AssemblyName>Chinook</AssemblyName>
-    <ModelCollation>1033, CI</ModelCollation>
+    <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -22,6 +22,8 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -56,5 +58,101 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\MediaType.sql" />
+    <Build Include="dbo\Tables\Artist.sql" />
+    <Build Include="dbo\Tables\Album.sql" />
+    <Build Include="dbo\Tables\Track.sql" />
+    <Build Include="dbo\Tables\Employee.sql" />
+    <Build Include="dbo\Tables\Customer.sql" />
+    <Build Include="dbo\Tables\Invoice.sql" />
+    <Build Include="dbo\Tables\InvoiceLine.sql" />
+    <Build Include="dbo\Tables\Playlist.sql" />
+    <Build Include="dbo\Tables\PlaylistTrack.sql" />
+    <Build Include="dbo\Tables\Genre.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_CheckAlbum.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_CheckArtist.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_CheckCustomer.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_CheckEmployee.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_CheckGenre.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_CheckInvoice.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_CheckInvoiceLine.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_CheckMediaType.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_CheckPlaylist.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_CheckTrack.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_DeleteAlbum.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_DeleteArtist.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_DeleteCustomer.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_DeleteEmployee.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_DeleteGenre.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_DeleteInvoice.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_DeleteInvoiceLine.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_DeleteMediaType.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_DeletePlaylist.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_DeletePlaylistTrack.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_DeleteTrack.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetAlbum.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetAlbumByArtist.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetAlbumDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetArtist.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetArtistDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetCustomer.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetCustomerBySupportRep.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetCustomerDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetEmployee.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetEmployeeDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetEmployeeDirectReports.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetEmployeeReportTo.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetGenre.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetGenreDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetInvoice.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetInvoiceByCustomer.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetInvoiceByEmployee.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetInvoiceDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetInvoiceLine.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetInvoiceLineByInvoice.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetInvoiceLineByTrack.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetInvoiceLineDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetMediaType.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetMediaTypeDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetPlaylist.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetPlaylistByTrack.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetPlaylistDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetPlaylistTrack.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetPlaylistTrackDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetTrack.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetTrackByAlbum.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetTrackByArtist.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetTrackByGenre.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetTrackByInvoice.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetTrackByMediaType.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetTrackByPlaylist.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_GetTrackDetails.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_InsertAlbum.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_InsertArtist.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_InsertCustomer.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_InsertEmployee.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_InsertGenre.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_InsertInvoice.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_InsertInvoiceLine.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_InsertMediaType.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_InsertPlaylist.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_InsertPlaylistTrack.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_InsertTrack.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_UpdateAlbum.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_UpdateArtist.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_UpdateCustomer.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_UpdateEmployee.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_UpdateGenre.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_UpdateInvoice.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_UpdateInvoiceLine.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_UpdateMediaType.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_UpdatePlaylist.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_UpdatePlaylistTrack.sql" />
+    <Build Include="dbo\Stored Procedures\sproc_UpdateTrack.sql" />
   </ItemGroup>
 </Project>

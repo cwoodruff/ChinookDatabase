@@ -1,0 +1,3 @@
+﻿CREATE PROCEDURE [dbo].[sproc_GetPlaylistTrack]
+AS
+SELECT CAST((SELECT * FROM [PlaylistTrack] FOR JSON PATH) AS VARCHAR(MAX)) AS JSONDATA
